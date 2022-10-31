@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Menu(props) {
     return (
         <nav className='menu'>
-            <Link to="/alunos">
+            <Link to="/produtos">
                 Produtos
             </Link>
             <Link to="/cursos">
