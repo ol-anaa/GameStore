@@ -6,7 +6,7 @@ export default function Main(props) {
     return (
         <div className="content">
             <Header {...props} />
-            <main> 
+            <main className='main'> 
                 {props.children} 
             </main>
         </div>

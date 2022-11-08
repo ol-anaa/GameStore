@@ -2,7 +2,7 @@
     margin-left: 20px;
 }
 
-.listaCursos {
+.listaProd {
     margin-left: 20px;
     font-family:
     'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida
@@ -20,17 +20,14 @@ th, td {
     padding: 10px;
 }
 
-.tabTitulocodCurso {
+.tabTituloProd {
     width: 450px;
 } 
 
-.tabTituloNomeCurso {
+.tabTituloValor {
     width: 700px;
 }
 
-.tabTituloPeriodo {
-    width: 450px;
-}
 
 input[type=text] {
     display: inline-block;
@@ -96,4 +93,9 @@ label {
 
 label {
     padding: 10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
 }
