@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './CrudCurso.css';
+import './Carrinho.css';
 import Main from '../template/Main';
 
-const title = "Cadastro de Cursos";
+const title = "Carrinho";
 
 const urlAPI = "http://localhost:5255/api/curso";
 const initialState = {
@@ -64,67 +64,14 @@ export default class CrudCurso extends Component {
         }
     }
 
-    renderForm() {
-        return (
-            <div className="inclui-container">
-                <label> Código do Curso: </label>
-                <input
-
-            
-                    type="number"
-                    id="codCurso"
-                    placeholder="Curso do aluno"
-                    className="form-input"
-                    name="codCurso"
-
-                    value={this.state.curso.codCurso}
-
-                    onChange={e => this.atualizaCampo(e)}
-                />
-                <label> Nome do Curso: </label>
-                <input
-                    type="text"
-                    id="nomeCurso"
-                    placeholder="Nome do Curso"
-                    className="form-input"
-                    name="nomeCurso"
-
-                    value={this.state.curso.nomeCurso}
-
-                    onChange={e => this.atualizaCampo(e)}
-                />
-                <label> Período: </label>
-                <input
-                    type="text"
-                    id="periodo"
-                    placeholder="Periodo"
-                    className="form-input"
-                    name="periodo"
-
-                    value={this.state.curso.periodo}
-                    onChange={e => this.atualizaCampo(e)}
-                />
-                <button className="btnSalvar"
-                    onClick={e => this.salvar(e)} >
-                    Salvar
-                </button>
-                <button className="btnCancelar"
-                    onClick={e => this.limpar(e)} >
-                    Cancelar
-                </button>
-            </div>
-        )
-    }
-
     renderTable() {
         return (
             <div className="listagem">
-                <table className="listaCursos" id="tblListaCursos">
+                <table className="listaProd" id="tblListaProd">
                     <thead>
                         <tr className="cabecTabela">
-                            <th className="tabTitulocodCurso">Codigo do curso</th>
-                            <th className="tabTituloNomeCurso">Nome do Curso</th>
-                            <th className="tabTituloperiodo">Período</th>
+                            <th className="tabTitulProd">Codigo do curso</th>
+                            <th className="tabTituloVaor">Nome do Curso</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -156,8 +103,9 @@ export default class CrudCurso extends Component {
     render() {
         return (
             <Main title={title}>
-                {this.renderForm()}
+                <div className='main'>
                 {this.renderTable()}
+                </div>
             </Main>
         )
     }

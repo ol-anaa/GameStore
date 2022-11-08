@@ -8,10 +8,10 @@ export default function Menu(props) {
             <Link to="/produtos">
                 Produtos
             </Link>
-            <Link to="/cursos">
+            <Link to="/carrinho">
                 Carrinho
             </Link>
-            <Link to="/carometro">
+            <Link to="/login">
                 Login
             </Link>
         </nav>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import Main from './components/template/Main';
-import CrudAluno from './components/CrudAluno/CrudAluno';
-import CrudCurso from './components/CrudCurso/CrudCurso';
+import Login from './components/Login/Login';
+import Carrinho from './components/Carrinho/Carrinho';
 import Produtos from './components/ListaProdutos/Produtos'
 
 export default function Rotas() {
@@ -15,8 +15,8 @@ export default function Rotas() {
                     </Main>}
             />
 
-            <Route path='/alunos' element={<CrudAluno />} />
-            <Route path='/cursos' element={<CrudCurso />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/carrinho' element={<Carrinho />} />
             <Route path='/produtos' element={<Produtos />} />
             <Route path='*' element={
                 <Main title="Bem Vindo(a)!">
