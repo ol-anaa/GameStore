@@ -24,12 +24,12 @@
     background-color: #f5f5f5;
   }
 
-aside.logo{
-  grid-area: logo;
-}
-
 nav.menu {
   grid-area: menu;
+}
+
+aside.logo{
+  grid-area: logo;
 }
 
 div.content {
