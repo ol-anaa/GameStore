@@ -40,15 +40,12 @@ export default class Produtos extends Component {
             <img className='img' src={ logo } alt="Logo" />
             <Form >
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Endereço de email</Form.Label>
+              <Form.Text>Endereço de email</Form.Text>
               <Form.Control type="email" placeholder="Digite o email" />
-              <Form.Text className="text-muted">
-               Nunca compartilharemos seu e-mail com ninguém.
-              </Form.Text>
             </Form.Group>
       
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Senha</Form.Label>
+              <Form.Text>Senha</Form.Text>
               <Form.Control type="password" placeholder="Senha" />
             </Form.Group>
             <Button  className='btn' variant="secondary" type="submit">

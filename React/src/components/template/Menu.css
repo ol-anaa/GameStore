@@ -5,26 +5,23 @@
     text-decoration: none;
 }
 
-nav.menu {  
+.nav {
+    background-color: #6666cca4;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 15px;
-    background-color: #6666cca4;
+    justify-content: space-around;
 }
 
-.menu a{
+.menu{
     display: flex;
-    gap: 32px; 
-    text-decoration: none;
-    color: #000;
-    padding: 10px;
-    font-size: 15px;
-
-
+    flex-direction: row;
+    justify-content:center;
+    padding-left: 824px;
 }
 
-.menu a:hover {
-    color: rgba(255, 255, 255, 0.637);
+.prop{
+    font-size: small;
+    display: flex;
+    justify-content:space-around;
+    color:dimgray;
 }
