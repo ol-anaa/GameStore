@@ -11,15 +11,11 @@ import img from '../../assets/ListaJogos/Mario.jpg';
 
 const title = "Lista de Produtos";
 
-const urlAPI = "http://localhost:5255/api/aluno";
-const urlAPICurso = "http://localhost:5255/api/curso";
-
+const urlAPI = "http://localhost:5255/api/produto";
 
 const initialState = {
-    aluno: { id: 0, ra: '', nome: '', codCurso: 0 },
-    curso: { id: 0, codCurso: 0, nomeCurso: '', periodo: '' },
+    produto: { id_produto: 0, valor: 0.0, nome: '', descricao: '' },
     lista: [],
-    listaCurso: []
 }
 
 
@@ -31,34 +27,36 @@ export default class Produtos extends Component {
         axios(urlAPI)
             .then(result => {
                 this.setState({ lista: result.data })
-            });
-        axios(urlAPICurso).then(resp => {
-            this.setState({ listaCurso: resp.data })
-        })
+            })
     }
 
-    renderCard() {
+    renderTable() {
         return (
-
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" class="Img" src={img} />
-                <Card.Body>
-                    <Card.Title><h3>Super Mario</h3></Card.Title>
-                    <Card.Text>
-                        Descrição do produto
-                    </Card.Text>
-                    <div>
-                        <Button className='btn' variant="secondary">Compre</Button>
-                    </div>
-                </Card.Body>
-            </Card>
+            <div>
+                {
+                    this.state.lista.map((produto) =>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" class="Img" src={img} />
+                            <Card.Body>
+                                <Card.Title><h3>{produto.nome}</h3></Card.Title>
+                                <Card.Text>
+                                    {produto.descricao}
+                                </Card.Text>
+                                <div>
+                                    <Button className='btn' variant="secondary">Compre</Button>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    )
+                }
+            </div>
         )
     }
 
     render() {
         return (
             <Main title={title}>
-                {this.renderCard()}
+                {this.renderTable()}
             </Main>
         )
     }

@@ -3,10 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Main from './components/template/Main';
 import Login from './components/Login/Login';
 import Carrinho from './components/Carrinho/Carrinho';
-import Produtos from './components/ListaProdutos/Produtos'
-import Cadastro from './components/Cadastro/Cadastro'
-import AlterarUser from './components/AlterarUser/AlterarUser'
-import AlterarProd from './components/AlterarProd/AlterarProd'
+import Produtos from './components/ListaProdutos/Produtos';
+import Cadastro from './components/Cadastro/Cadastro';
+import AlterarUser from './components/AlterarUser/AlterarUser';
+import AlterarProd from './components/AlterarProd/AlterarProd';
 
 export default function Rotas() {
     return (

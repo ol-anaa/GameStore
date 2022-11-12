@@ -10,27 +10,27 @@ namespace ProjetoEscola_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlunoController : ControllerBase
+    public class ProdutoController : ControllerBase
 
     {
         private EscolaContext _context;
-        public AlunoController(EscolaContext context)
+        public ProdutoController(EscolaContext context)
         {
             // construtor
             _context = context;
         }
         [HttpGet]
-        public ActionResult<List<Aluno>> GetAll()
+        public ActionResult<List<Produto>> GetAll()
         {
-            return _context.Aluno.ToList();
+            return _context.Produto.ToList();
         }
 
-        [HttpGet("{AlunoId}")]
-        public ActionResult<List<Aluno>> Get(int AlunoId)
+        [HttpGet("{id}")]
+        public ActionResult<List<Produto>> Get(int id)
         {
             try
             {
-                var result = _context.Aluno.Find(AlunoId);
+                var result = _context.Produto.Find(id);
                 if (result == null)
                 {
                     return NotFound();
@@ -44,15 +44,15 @@ namespace ProjetoEscola_API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> post(Aluno model)
+        public async Task<ActionResult> post(Produto model)
         {
             try
             {
-                _context.Aluno.Add(model);
+                _context.Produto.Add(model);
                 if (await _context.SaveChangesAsync() == 1)
                 {
                     //return Ok();
-                    return Created($"/api/aluno/{model.ra}", model);
+                    return Created($"/api/produto/{model.id}", model);
                 }
             }
             catch
@@ -63,19 +63,19 @@ namespace ProjetoEscola_API.Controllers
             return BadRequest();
         }
 
-        [HttpDelete("{AlunoId}")]
-        public async Task<ActionResult> delete(int AlunoId)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> delete(int id)
         {
             try
             {
                 //verifica se existe aluno a ser excluído
-                var aluno = await _context.Aluno.FindAsync(AlunoId);
-                if (aluno == null)
+                var Produto = await _context.Produto.FindAsync(id);
+                if (Produto == null)
                 {
                     //método do EF
                     return NotFound();
                 }
-                _context.Remove(aluno);
+                _context.Remove(Produto);
                 await _context.SaveChangesAsync();
                 return NoContent();
             }
@@ -85,22 +85,23 @@ namespace ProjetoEscola_API.Controllers
             }
         }
 
-        [HttpPut("{AlunoId}")]
-        public async Task<IActionResult> put(int AlunoId, Aluno dadosAlunoAlt)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> put(int id, Produto dadosProdutoAlt)
         {
             try
             {
                 //verifica se existe aluno a ser alterado
-                var result = await _context.Aluno.FindAsync(AlunoId);
-                if (AlunoId != result.id)
+                var result = await _context.Produto.FindAsync(id);
+                if (id != result.id)
                 {
                     return BadRequest();
                 }
-                result.ra = dadosAlunoAlt.ra;
-                result.nome = dadosAlunoAlt.nome;
-                result.codCurso = dadosAlunoAlt.codCurso;
+                result.id = dadosProdutoAlt.id;
+                result.nome = dadosProdutoAlt.nome;
+                result.valor = dadosProdutoAlt.valor;
+                result.descricao = dadosProdutoAlt.descricao;
                 await _context.SaveChangesAsync();
-                return Created($"/api/aluno/{dadosAlunoAlt.ra}", dadosAlunoAlt);
+                return Created($"/api/produto/{dadosProdutoAlt.id}", dadosProdutoAlt);
             }
             catch
             {
