@@ -6,16 +6,13 @@ import Main from '../template/Main';
 const title = "Alteração Usuários";
 
 const urlAPI = "http://localhost:5255/api/aluno";
-const urlAPICurso = "http://localhost:5255/api/curso";
 
 const initialState = {
-    aluno: { id: 0, ra: '', nome: '', codCurso: 0 },
-    curso: { id: 0, codCurso: 0, nomeCurso: '', periodo: '' },
+    usuario: { id_usuario: 0, nome: '', email: '', senha: 0 },
     lista: [],
-    listaCurso: [],
 }
 
-export default class CrudAluno extends Component {
+export default class AlterarUser extends Component {
 
     state = { ...initialState }
     
@@ -23,9 +20,7 @@ export default class CrudAluno extends Component {
         axios(urlAPI).then(resp => {
             this.setState({ lista: resp.data })
         });
-        axios(urlAPICurso).then(resp => {
-            this.setState({ listaCurso: resp.data })
-        })
+
     }
 
     limpar() {
