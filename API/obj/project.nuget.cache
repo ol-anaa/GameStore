@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jUE2vL61+c+JBjKBdWHJAg0WNPUL3fjbfCt/FUx1PL1FrsiGDvTpwfL2JE5EDtUGXd5Ga4nBk1de0XSzvasmXg==",
+  "dgSpecHash": "Yl/VnNdXD5ZXPO3baI/bofTL4D8n6/dC3tWtxNud9TcGNxgecYLa7WsKdy8LylGHXBX5xEFEmFA4LoY91+SiBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\DSWebIII\\ProjetoEscola_API\\ProjetoEscola_API.csproj",
+  "projectFilePath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olive\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\olive\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

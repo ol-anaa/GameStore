@@ -37,8 +37,8 @@ export default class Produtos extends Component {
     renderForm() {
         return (
             <div className='Centro'>
-            <img className='img' src={ logo } alt="Logo" />
-            <Form >
+            <img className='img1' src={ logo } alt="Logo" />
+            <Form className='forms'>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Text>Nome</Form.Text>
               <Form.Control type="string" placeholder="Nome" />

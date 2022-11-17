@@ -2128,11 +2128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\DSWebIII\\ProjetoEscola_API\\ProjetoEscola_API.csproj",
+      "projectUniqueName": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
       "projectName": "ProjetoEscola_API",
-      "projectPath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\DSWebIII\\ProjetoEscola_API\\ProjetoEscola_API.csproj",
+      "projectPath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
       "packagesPath": "C:\\Users\\olive\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\DSWebIII\\ProjetoEscola_API\\obj\\",
+      "outputPath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
