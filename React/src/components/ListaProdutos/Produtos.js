@@ -42,8 +42,8 @@ export default class Produtos extends Component {
                                 <Card.Text>
                                     {produto.descricao}
                                 </Card.Text>
-                                <div>
-                                    <Button className='btn' variant="secondary">Compre</Button>
+                                <div className='btnC'>
+                                    <Button  variant="secondary">Compre</Button>
                                 </div>
                             </Card.Body>
                         </Card>

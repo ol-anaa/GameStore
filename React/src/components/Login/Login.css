@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 500px;
+    padding-top: 50px;
 
 }
 
@@ -14,9 +16,8 @@
     width: 400px;
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 25px;
-    display: block;
-    }
+
+}
 
 .main{
     display: flex;
@@ -27,10 +28,12 @@
 .btn{
     display: flex;
     justify-content: center;
-    margin-left: 130px;
+    margin-left: 150px;
+    width: 100px;
 }
  
 .img{
+    margin-left: 400px;
     width: 130px;
 }
 
