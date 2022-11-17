@@ -6,7 +6,9 @@
     align-items: center;
 
 }
-
+.forms{
+    margin-right: 470px;
+}
 .main{
     display: flex;
     flex-direction: row;
@@ -19,6 +21,7 @@
     margin-left: 130px;
 }
  
-.img{
+.img1{
     width: 130px;
+    margin-right: 500px;
 }

@@ -7,8 +7,8 @@
     width: 100%;
 }
 
-.btn{
+.btnC{
     display: flex;
     justify-content: center;
-    margin-right: 130px;
+    margin-right: 100px;
 }
