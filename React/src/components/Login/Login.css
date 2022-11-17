@@ -7,6 +7,17 @@
 
 }
 
+.formLogin { 
+   /* ESSE AQUI QUE MOVE TODO O FORMS */
+    margin: auto;
+    margin-top: 50px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 25px;
+    display: block;
+    }
+
 .main{
     display: flex;
     flex-direction: row;
@@ -21,4 +32,11 @@
  
 .img{
     width: 130px;
+}
+
+.msgErro {
+    color: red;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
