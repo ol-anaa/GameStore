@@ -4,10 +4,10 @@ import axios from "axios";
 const API_URL = "http://localhost:5255/api/Home/"; //Atenção na rota que talvez seja necessaria ser mudada
 
 
-const login = (username, senha) => {
+const login = (email, senha) => {
     return axios
         .post(API_URL + "auth", {
-            username,
+            email,
             senha,
         })
         .then((response) => {

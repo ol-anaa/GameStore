@@ -1,26 +1,48 @@
 import React, { Component } from 'react';
+
 import axios from 'axios';
 import './AlterarProd.css';
 import Main from '../template/Main';
 
 const title = "Alteração de produtos";
 
-const urlAPI = "http://localhost:5255/api/aluno";
 
+const urlAPI = "http://localhost:5255/api/AlterarProduto";
 const initialState = {
     produto: { id: 0, valor: 0, nome: '', descicao: '' },
     lista: [],
 }
 
+const user = JSON.parse(localStorage.getItem("user"));
+
+
 export default class AlterarProd extends Component {
 
     state = { ...initialState }
-    
+
     componentDidMount() {
+
         axios(urlAPI).then(resp => {
             this.setState({ lista: resp.data })
         });
+
+        axios(urlAPI, { headers: { Authorization: 'Bearer ' + user.token } })
+            .then(resp => {
+                this.setState({ lista: resp.data });
+            },
+                (error) => {
+                    const _mens =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    this.setState({ mens: _mens });
+                }
+            );
+
     }
+
 
     limpar() {
         this.setState({ produto: initialState.produto });
@@ -34,12 +56,12 @@ export default class AlterarProd extends Component {
         const metodo = produto.id ? 'put' : 'post';
         const url = produto.id ? `${urlAPI}/${produto.id}` : urlAPI;
         axios[metodo](url, produto)
+        
             .then(resp => {
                 const lista = this.getListaAtualizada(resp.data)
                 this.setState({ produto: initialState.produto, lista })
             })
     }
-
     
     getListaAtualizada(produto, add = true) {
         const lista = this.state.lista.filter(a => a.id !== produto.id);
@@ -156,9 +178,14 @@ export default class AlterarProd extends Component {
     render() {
         return (
             <Main className='main' title={title}>
-                {this.renderForm()}
-                {this.renderTable()}
+
+                   
+                   {this.renderForm()}
+                   {this.renderTable()}
+                  
+
             </Main>
         )
     }
+
 }
