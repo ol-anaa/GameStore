@@ -1,11 +1,23 @@
+import React, { useEffect, useState } from 'react';
 import './Menu.css';
-import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import AuthService from '../../Services/AuthService';
+
 
 export default function Menu(props) {
+
+    const [currentUser, setCurrentUser] = useState(undefined);
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        if (user) {
+            setCurrentUser(user);
+        }
+    }, []);
+
+
     return (
         <Navbar className='nav'>
             <Container>
@@ -16,13 +28,17 @@ export default function Menu(props) {
                             <Nav.Link href="/produtos" >Produtos</Nav.Link>
                             <Nav.Link href="/cadastro">Cadastre-se</Nav.Link>
                             <NavDropdown title="Usuário" id="basic-nav-dropdown">
+                            {currentUser ? (
+                                <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+                                ) : (
                                 <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                                )}
                                 <NavDropdown.Item href="/carrinho">Carrinho</NavDropdown.Item>
                                 <NavDropdown.Item href="/alterar">Alterar dados</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <Nav className='prop'>Funções proprietário</Nav>
                                 <NavDropdown.Item href="/alterProd">Alterar produtos</NavDropdown.Item>
-                                
+
                             </NavDropdown>
                         </Nav>
                     </div>

@@ -247,4 +247,3 @@ C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\refint\ProjetoEsc
 C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.pdb
 C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.genruntimeconfig.cache
 C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ref\ProjetoEscola_API.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
