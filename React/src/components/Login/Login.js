@@ -74,11 +74,4 @@ export default function Login() {
             </Form>
         </div>
     )
-
-    return (
-        <Main className='main' title={title}>
-            {this.renderForm()}
-        </Main>
-    )
-
 }
