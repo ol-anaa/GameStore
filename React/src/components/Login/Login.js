@@ -12,17 +12,17 @@ import AuthService from '../../Services/AuthService';
 const title = "Login";
 export default function Login() {
     
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
     async function handleSubmit(evento) {
         evento.preventDefault();
-        const userForm = { username, password };
-        if (!username || !password) {
-            setMessage("Preencha o username e a senha para continuar!");
+        const userForm = { email, password };
+        if (!email || !password) {
+            setMessage("Preencha o email e a senha para continuar!");
         } else {
-            AuthService.login(username, password).then(
+            AuthService.login(email, password).then(
                 () => {
                     console.log("localStorage: " +
 
@@ -53,8 +53,8 @@ export default function Login() {
                     <Form.Control type="email" 
                                   placeholder="Digite o email"
                                   className="inputAuth" 
-                                  value={username}
-                                  onChange={({ target }) => { setUsername(target.value);
+                                  value={email}
+                                  onChange={({ target }) => { setEmail(target.value);
                                     setMessage(""); }} />
                 </Form.Group>
 

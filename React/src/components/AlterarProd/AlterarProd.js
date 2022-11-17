@@ -1,41 +1,57 @@
 import React, { Component } from 'react';
+
 import axios from 'axios';
 import './AlterarProd.css';
 import Main from '../template/Main';
 
 const title = "Alteração de produtos";
 
-const urlAPI = "http://localhost:5255/api/aluno";
-const urlAPICurso = "http://localhost:5255/api/curso";
+
+const urlAPI = "http://localhost:5255/api/AlterarProduto";
 
 const initialState = {
-    aluno: { id: 0, ra: '', nome: '', codCurso: 0 },
-    curso: { id: 0, codCurso: 0, nomeCurso: '', periodo: '' },
+    produto: { id_produto: 0, valor: 0.0, nome: '', descricao: '' },
     lista: [],
-    listaCurso: [],
 }
 
-export default class CrudAluno extends Component {
+const user = JSON.parse(localStorage.getItem("user"));
+
+export default class AlterarProd extends Component {
 
     state = { ...initialState }
-    
+
     componentDidMount() {
-        axios(urlAPI).then(resp => {
-            this.setState({ lista: resp.data })
-        });
-        axios(urlAPICurso).then(resp => {
-            this.setState({ listaCurso: resp.data })
-        })
+        /*    
+            axios(urlAPI).then(resp => {
+                this.setState({ lista: resp.data })
+            })
+        }
+        */
+        axios(urlAPI, { headers: { Authorization: 'Bearer ' + user.token } })
+            .then(resp => {
+                this.setState({ lista: resp.data });
+            },
+                (error) => {
+                    const _mens =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    this.setState({ mens: _mens });
+                }
+            );
     }
+
 
     limpar() {
         this.setState({ aluno: initialState.aluno });
-    } 
+    }
 
     salvar() {
         let codigoCurso = document.getElementById('codigoCurso').value;
         const aluno = this.state.aluno;
-        
+
         aluno.codCurso = Number(codigoCurso);
         const metodo = aluno.id ? 'put' : 'post';
         const url = aluno.id ? `${urlAPI}/${aluno.id}` : urlAPI;
@@ -46,7 +62,7 @@ export default class CrudAluno extends Component {
             })
     }
 
-    
+
     getListaAtualizada(aluno, add = true) {
         const lista = this.state.lista.filter(a => a.id !== aluno.id);
         if (add) lista.unshift(aluno);
@@ -166,9 +182,14 @@ export default class CrudAluno extends Component {
     render() {
         return (
             <Main className='main' title={title}>
-                {this.renderForm()}
-                {this.renderTable()}
+
+                   
+                   {this.renderForm()}
+                   {this.renderTable()}
+                  
+
             </Main>
         )
     }
+
 }
