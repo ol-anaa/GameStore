@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/u21816/GameStore/API/ProjetoEscola_API.csproj": {}
+    "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj": {}
   },
   "projects": {
-    "/Users/u21816/GameStore/API/ProjetoEscola_API.csproj": {
+    "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/u21816/GameStore/API/ProjetoEscola_API.csproj",
+        "projectUniqueName": "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
         "projectName": "ProjetoEscola_API",
-        "projectPath": "/Users/u21816/GameStore/API/ProjetoEscola_API.csproj",
-        "packagesPath": "/Users/u21816/.nuget/packages/",
-        "outputPath": "/Users/u21816/GameStore/API/obj/",
+        "projectPath": "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
+        "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/u21816/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,9 +44,13 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.8, )"
+              "version": "[6.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -57,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -69,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

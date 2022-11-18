@@ -318,3 +318,13 @@ C:/Users/olive/OneDrive/Documentos/GitHub/GameStore/API/obj/Debug/net6.0/ref/Pro
 /Users/u21816/GameStore/API/obj/Debug/net6.0/ProjetoEscola_API.dll
 /Users/u21816/GameStore/API/obj/Debug/net6.0/ref/ProjetoEscola_API.dll
 /Users/u21816/GameStore/API/obj/Debug/net6.0/ProjetoEscola_API.pdb
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.csproj.AssemblyReference.cache
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.AssemblyInfoInputs.cache
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.AssemblyInfo.cs
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.csproj.CoreCompileInputs.cache
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.dll
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\refint\ProjetoEscola_API.dll
+C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net6.0\ProjetoEscola_API.pdb
