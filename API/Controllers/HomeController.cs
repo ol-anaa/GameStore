@@ -59,18 +59,41 @@ new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         [HttpGet]
         [Route("authenticated")]
         [Authorize]
-        public string Authenticated() => String.Format("Autenticado - {0}",
-        User.Identity.Name);
+       public string Authenticated()
+        {
+            if(User is not null && User.Identity is not null)
+            {
+                return String.Format("Autenticado - {0}", User.Identity.Name);
+            }
+            
+            return "Null";
+        }
 
         [HttpGet]
-        [Route("cliente")]
-        [Authorize(Roles = "cliente,adm")]
+        [Route("Cliente")]
+        [Authorize(Roles = "anonymous")]
 
-        public string Cliente() => "Cliente";
+        public string Cliente()
+        {
+            if(User is not null && User.Identity is not null)
+            {
+                return String.Format("Cliente - {0}", User.Identity.Name);
+            }
+            
+            return "Null";
+        }
         [HttpGet]
         [Route("Adm")]
-        [Authorize(Roles = "Adm")]
-        public string Adm() => "Adm";
+        [Authorize(Roles = "Cliente")]
+       public string Adm() 
+        {
+            if(User is not null && User.Identity is not null)
+            {
+                return String.Format("Administrador - {0}", User.Identity.Name);
+            }
+            
+            return "Null";
+        }
         private JwtSecurityToken GetToken(List<Claim> authClaims)
         {
             var authSigningKey = new

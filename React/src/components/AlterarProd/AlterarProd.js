@@ -6,15 +6,16 @@ import Main from '../template/Main';
 
 const title = "Alteração de produtos";
 
-
+const urlAutoriza = "http://localhost:5255/api/Home/Adm";
 const urlAPI = "http://localhost:5255/api/produto";
+
+
 const initialState = {
     produto: { id: 0, valor: 0, nome: '', descricao: '' },
     lista: [],
 }
 
 const user = JSON.parse(localStorage.getItem("user"));
-
 
 export default class AlterarProd extends Component {
 
@@ -26,7 +27,7 @@ export default class AlterarProd extends Component {
             this.setState({ lista: resp.data })
         });
 
-        axios(urlAPI, { headers: { Authorization: 'Bearer ' + user.token } })
+        axios(urlAutoriza, { headers: { Authorization: 'Bearer ' + user.token } })
             .then(resp => {
                 this.setState({ lista: resp.data });
             },
@@ -117,13 +118,13 @@ export default class AlterarProd extends Component {
 
                     onChange={e => this.atualizaCampo(e)}
                 />
-                <label> Descição: </label>
+                <label> Descrição: </label>
                 <input
                     type="text"
                     id="descricao"
                     placeholder="descricao do produto"
                     className="form-input"
-                    name="valor"
+                    name="descricao"
 
                     value={this.state.produto.descricao}
 
@@ -150,7 +151,7 @@ export default class AlterarProd extends Component {
                         <tr className="cabecTabela">
                             <th className="tabTituloNome">Nome</th>
                             <th className="tabTituloValor">Valor</th>
-                            <th className="tabTituloDescicao">Descrição</th>
+                            <th className="tabTituloDescricao">Descrição</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -184,7 +185,6 @@ export default class AlterarProd extends Component {
         return (
             <Main className='main' title={title}>
 
-                   
                    {this.renderForm()}
                    {this.renderTable()}
                   

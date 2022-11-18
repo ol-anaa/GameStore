@@ -8,7 +8,7 @@ export default function Logout() {
     useEffect(() => {
         AuthService.logout();
         console.log("logout");
-        navigate("/");
+        navigate("/login");
         window.location.reload();
     }, []);
     return (

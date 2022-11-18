@@ -7,7 +7,6 @@ import Logout from './components/Logout/Logout';
 import AuthService from './Services/AuthService';
 import Carrinho from './components/Carrinho/Carrinho';
 import Produtos from './components/ListaProdutos/Produtos';
-import Cadastro from './components/Cadastro/Cadastro';
 import AlterarUser from './components/AlterarUser/AlterarUser';
 import AlterarProd from './components/AlterarProd/AlterarProd';
 
@@ -45,7 +44,6 @@ export default function Rotas() {
             )} 
 
             <Route path='/produtos' element={<Produtos />} />
-            <Route path='/cadastro' element={<Cadastro />} />
 
             {currentUser ? (
             <Route path='/alterar' element={<AlterarUser />} />

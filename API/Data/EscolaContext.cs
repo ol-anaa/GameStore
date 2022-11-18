@@ -20,6 +20,6 @@ namespace ProjetoEscola_API.Data
         public DbSet<Curso>? Curso { get; set; }
         public DbSet<Produto>? Produto { get; set; }
         public DbSet<User>? Usuario {get; set;}
-        public DbSet<Carrinho>? carrinho {get; set;}
+       // public DbSet<Carrinho>? carrinho {get; set;}
     }
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5255/api/Home/";
+const API_URL = "http://localhost:5255/api/Home";
 
 // Alterar Produtos: role adm
 // Alterar Usuario: role user
@@ -14,7 +14,7 @@ const getPublicContent = () => {
     return axios.get(API_URL + "anonymous");
 };
 
-const getAdmBoard = async () => {
+const getAuthenticatedBoard = async () => {
     return await axios.get(API_URL + "authenticated", {
         headers: {
             Authorization:
@@ -23,14 +23,9 @@ const getAdmBoard = async () => {
     });
 };
 
-const getClientBoard = async () => {
-    return await axios.get(API_URL + "cliente");
-};
-
 const UserService = {
     getPublicContent,
-    getAdmBoard,
-    getClientBoard
+    getAuthenticatedBoard
 };
 
 export default UserService;
