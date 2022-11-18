@@ -2596,19 +2596,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/u21088/.nuget/packages/": {}
+    "/Users/u21816/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/u21088/escola/GameStore/API/ProjetoEscola_API.csproj",
+      "projectUniqueName": "/Users/u21816/GameStore/API/ProjetoEscola_API.csproj",
       "projectName": "ProjetoEscola_API",
-      "projectPath": "/Users/u21088/escola/GameStore/API/ProjetoEscola_API.csproj",
-      "packagesPath": "/Users/u21088/.nuget/packages/",
-      "outputPath": "/Users/u21088/escola/GameStore/API/obj/",
+      "projectPath": "/Users/u21816/GameStore/API/ProjetoEscola_API.csproj",
+      "packagesPath": "/Users/u21816/.nuget/packages/",
+      "outputPath": "/Users/u21816/GameStore/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/u21088/.nuget/NuGet/NuGet.Config"
+        "/Users/u21816/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2663,7 +2663,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }
