@@ -24,51 +24,41 @@ export default class AlterarUser extends Component {
     }
 
     limpar() {
-        this.setState({ aluno: initialState.aluno });
+        this.setState({ usuario: initialState.usuario });
     } 
 
     salvar() {
-        let codigoCurso = document.getElementById('codigoCurso').value;
-        const aluno = this.state.aluno;
         
-        aluno.codCurso = Number(codigoCurso);
-        const metodo = aluno.id ? 'put' : 'post';
-        const url = aluno.id ? `${urlAPI}/${aluno.id}` : urlAPI;
-        axios[metodo](url, aluno)
+        const usuario = this.state.usuario;
+        usuario.nome = String(nome);
+        const metodo = usuario.id ? 'put' : 'post';
+        const url = usuario.id ? `${urlAPI}/${usuario.id}` : urlAPI;
+        axios[metodo](url, usuario)
             .then(resp => {
                 const lista = this.getListaAtualizada(resp.data)
-                this.setState({ aluno: initialState.aluno, lista })
+                this.setState({ usuario: initialState.usuario, lista })
             })
     }
 
     
-    getListaAtualizada(aluno, add = true) {
-        const lista = this.state.lista.filter(a => a.id !== aluno.id);
-        if (add) lista.unshift(aluno);
+    getListaAtualizada(usuario, add = true) {
+        const lista = this.state.lista.filter(a => a.id !== usuario.id);
+        if (add) lista.unshift(usuario);
         return lista;
     }
 
-    atualizaCampo(event) {
-        //clonar usuário a partir do state, para não alterar o state diretamente
-        const aluno = { ...this.state.aluno };
-        //usar o atributo NAME do input para identificar o campo a ser atualizado
-        aluno[event.target.name] = event.target.value;
-        //atualizar o state
-        this.setState({ aluno });
+    carregar(usuario) {
+        this.setState({ usuario })
     }
 
-    carregar(aluno) {
-        this.setState({ aluno })
-    }
-
-    remover(aluno) {
-        const url = urlAPI + "/" + aluno.id;
-        if (window.confirm("Confirma remoção do aluno: " + aluno.ra)) {
+    remover(usuario) {
+        const url = urlAPI + "/" + usuario.id;
+        if (window.confirm("Confirma remoção do usuario: " + usuario.id)) {
             console.log("entrou no confirm");
-            axios['delete'](url, aluno)
+            axios['delete'](url, usuario)
                 .then(resp => {
-                    const lista = this.getListaAtualizada(aluno, false)
-                    this.setState({ aluno: initialState.aluno, lista })
+                    const lista = this.getListaAtualizada(usuario, false)
+                    this.setState({ usuario: initialState.usuario, lista })
                 })
         }
     }
@@ -76,18 +66,6 @@ export default class AlterarUser extends Component {
     renderForm() {
         return (
             <div className="inclui-container">
-                <label> RA: </label>
-                <input
-                    type="text"
-                    id="ra"
-                    placeholder="RA do aluno"
-                    className="form-input"
-                    name="ra"
-
-                    value={this.state.aluno.ra}
-
-                    onChange={e => this.atualizaCampo(e)}
-                />
                 <label> Nome: </label>
                 <input
                     type="text"
@@ -96,17 +74,34 @@ export default class AlterarUser extends Component {
                     className="form-input"
                     name="nome"
 
-                    value={this.state.aluno.nome}
+                    value={this.state.usuario.nome}
 
                     onChange={e => this.atualizaCampo(e)}
                 />
+                <label> Email: </label>
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="Email do usuario"
+                    className="form-input"
+                    name="email"
 
-                <label> Código do Curso: </label>
-                <select name="nomeCurso" id="codigoCurso">
-                    {this.state.listaCurso.map((curso) =>
-                        <option key={curso.id} value={curso.codCurso}>{curso.nomeCurso}</option>
-                    )}
-                </select>
+                    value={this.state.usuario.email}
+
+                    onChange={e => this.atualizaCampo(e)}
+                />
+                <label> Senha: </label>
+                <input
+                    type="text"
+                    id="senha"
+                    placeholder="Senha do usuario"
+                    className="form-input"
+                    name="senha"
+
+                    value={this.state.usuario.senha}
+
+                    onChange={e => this.atualizaCampo(e)}
+                />
 
                 <button className="btnSalvar"
                     onClick={e => this.salvar(e)} >
@@ -123,31 +118,31 @@ export default class AlterarUser extends Component {
     renderTable() {
         return (
             <div className="listagem">
-                <table className="listaAlunos" id="tblListaAlunos">
+                <table className="listaUsuarios" id="tblListaUsuarios">
                     <thead>
                         <tr className="cabecTabela">
-                            <th className="tabTituloRa">Ra</th>
                             <th className="tabTituloNome">Nome</th>
-                            <th className="tabTituloCurso">Curso</th>
+                            <th className="tabTituloEmail">Email</th>
+                            <th className="tabTituloSenha">Senha</th>
                             <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.lista.map(
-                            (aluno) =>
+                            (usuario) =>
 
-                                <tr key={aluno.id}>
-                                    <td>{aluno.ra}</td>
-                                    <td>{aluno.nome}</td>
-                                    <td>{aluno.codCurso}</td>
+                                <tr key={usuario.id}>
+                                    <td>{usuario.nome}</td>
+                                    <td>{usuario.email}</td>
+                                    <td>{usuario.senha}</td>
                                     <td>
-                                        <button onClick={() => this.carregar(aluno)} >
+                                        <button onClick={() => this.carregar(usuario)} >
                                             Altera
                                         </button>
                                     </td>
                                     <td>
-                                        <button onClick={() => this.remover(aluno)} >
+                                        <button onClick={() => this.remover(usuario)} >
                                             Remove
                                         </button>
                                     </td>

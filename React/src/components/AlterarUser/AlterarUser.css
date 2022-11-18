@@ -2,7 +2,7 @@
     margin-left: 20px;
 }
 
-.listaAlunos {
+.listaUsuarios {
     margin-left: 20px;
     font-family:
     'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida
@@ -20,15 +20,15 @@ th, td {
     padding: 10px;
 }
 
-.tabTituloRa {
+.tabTituloNome {
     width: 450px;
 } 
 
-.tabTituloNome {
+.tabTituloEmail {
     width: 700px;
 }
 
-.tabTituloCurso {
+.tabTituloSenha {
     width: 450px;
 }
 
