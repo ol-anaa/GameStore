@@ -7,7 +7,7 @@ import Main from '../template/Main';
 const title = "Alteração de produtos";
 
 
-const urlAPI = "http://localhost:5255/api/AlterarProduto";
+const urlAPI = "http://localhost:5255/api/alterProd";
 const initialState = {
     produto: { id: 0, valor: 0, nome: '', descicao: '' },
     lista: [],

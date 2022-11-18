@@ -24,6 +24,7 @@ namespace ProjetoEscola_API.Controllers
             _configuration = configuration;
             _context = context;
         }
+
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
@@ -60,9 +61,15 @@ new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         [Authorize]
         public string Authenticated() => String.Format("Autenticado - {0}",
         User.Identity.Name);
+
         [HttpGet]
         [Route("produto")]
         [Authorize(Roles = "cliente,adm")]
+
+        [HttpGet]
+        [Route("alterProd")]
+        [Authorize(Roles = "adm")]
+
         public string Cliente() => "Cliente";
         [HttpGet]
         [Route("Adm")]
