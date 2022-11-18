@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -25,6 +24,7 @@ namespace ProjetoEscola_API.Controllers
             _configuration = configuration;
             _context = context;
         }
+
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
@@ -61,9 +61,11 @@ new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         [Authorize]
         public string Authenticated() => String.Format("Autenticado - {0}",
         User.Identity.Name);
+
         [HttpGet]
-        [Route("produto")]
+        [Route("cliente")]
         [Authorize(Roles = "cliente,adm")]
+
         public string Cliente() => "Cliente";
         [HttpGet]
         [Route("Adm")]
@@ -80,9 +82,7 @@ new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             issuer: _configuration["JWT:ValidIssuer"],
             audience: _configuration["JWT:ValidAudience"],
             claims: authClaims,
-            signingCredentials: new SigningCredentials(authSigningKey,
-
-            SecurityAlgorithms.HmacSha256)
+            signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
 
             );
             return token;

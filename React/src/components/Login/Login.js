@@ -10,15 +10,19 @@ import { useNavigate } from "react-router";
 import AuthService from '../../Services/AuthService';
 
 const title = "Login";
+
 export default function Login() {
     
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+
     async function handleSubmit(evento) {
+
         evento.preventDefault();
         const userForm = { email, password };
+        
         if (!email || !password) {
             setMessage("Preencha o email e a senha para continuar!");
         } else {

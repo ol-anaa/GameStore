@@ -6,7 +6,7 @@ const API_URL = "http://localhost:5255/api/Home/"; //Atenção na rota que talve
 
 const login = (email, senha) => {
     return axios
-        .post(API_URL + "auth", {
+        .post(API_URL + "login", {
             email,
             senha,
         })

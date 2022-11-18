@@ -90,7 +90,6 @@ namespace ProjetoEscola_API.Controllers
         {
             try
             {
-                //verifica se existe aluno a ser alterado
                 var result = await _context.Produto.FindAsync(id);
                 if (id != result.id)
                 {
