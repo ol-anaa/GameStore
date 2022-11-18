@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoEscola_API.Models
 {
-    public class Usuario
+    public class User
     {
         public int id { get; set; }
         public string? nome {get; set; } = string.Empty;
