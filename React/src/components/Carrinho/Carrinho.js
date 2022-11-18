@@ -5,13 +5,13 @@ import Main from '../template/Main';
 
 const title = "Carrinho";
 
-const urlAPI = "http://localhost:5255/api/curso";
+const urlAPI = "http://localhost:5255/api/carrinho";
 const initialState = {
-    curso: { id: 0, codCurso: 0, nomeCurso: '', periodo: '' },
+    carrinho: { id_carrinho: 0, qtd: 0, id: 0},
     lista: []
 }
 
-export default class CrudCurso extends Component {
+export default class Carrinho extends Component {
 
     state = { ...initialState }
     componentDidMount() {
@@ -21,45 +21,45 @@ export default class CrudCurso extends Component {
     }
 
     limpar() {
-        this.setState({ curso: initialState.curso });
+        this.setState({ carrinho: initialState.carrinho });
     }
     salvar() {
-        const curso = this.state.curso;
-        curso.codCurso = Number(curso.codCurso);
-        const metodo = curso.id ? 'put' : 'post';
-        const url = curso.id ? `${urlAPI}/${curso.id}` : urlAPI;
-        axios[metodo](url, curso)
+        const carrinho = this.state.carrinho;
+        carrinho.carrinho = Number(carrinho.carrinho);
+        const metodo = carrinho.id ? 'put' : 'post';
+        const url = carrinho.id ? `${urlAPI}/${carrinho.id}` : urlAPI;
+        axios[metodo](url, carrinho)
             .then(resp => {
                 const lista = this.getListaAtualizada(resp.data)
-                this.setState({ curso: initialState.curso, lista })
+                this.setState({ carrinho: initialState.carrinho, lista })
             })
     }
 
 
-    getListaAtualizada(curso, add = true) {
-        const lista = this.state.lista.filter(a => a.id !== curso.id);
-        if (add) lista.unshift(curso);
+    getListaAtualizada(carrinho, add = true) {
+        const lista = this.state.lista.filter(a => a.id !== carrinho.id);
+        if (add) lista.unshift(carrinho);
         return lista;
     }
     atualizaCampo(event) {
         //clonar usuário a partir do state, para não alterar o state diretamente
-        const curso = { ...this.state.curso };
+        const carrinho = { ...this.state.carrinho };
         //usar o atributo NAME do input para identificar o campo a ser atualizado
-        curso[event.target.name] = event.target.value;
+        carrinho[event.target.name] = event.target.value;
         //atualizar o state
-        this.setState({ curso });
+        this.setState({ carrinho });
     }
-    carregar(curso) {
-        this.setState({ curso })
+    carregar(carrinho) {
+        this.setState({ carrinho })
     }
-    remover(curso) {
-        const url = urlAPI + "/" + curso.id;
-        if (window.confirm("Confirma remoção do curso: " + curso.id)) {
+    remover(carrinho) {
+        const url = urlAPI + "/" + carrinho.id;
+        if (window.confirm("Confirma remoção do carrinho: " + carrinho.id)) {
             console.log("entrou no confirm");
-            axios['delete'](url, curso)
+            axios['delete'](url, carrinho)
                 .then(resp => {
-                    const lista = this.getListaAtualizada(curso, false)
-                    this.setState({ curso: initialState.curso, lista })
+                    const lista = this.getListaAtualizada(carrinho, false)
+                    this.setState({ carrinho: initialState.carrinho, lista })
                 })
         }
     }
@@ -70,25 +70,24 @@ export default class CrudCurso extends Component {
                 <table className="listaProd" id="tblListaProd">
                     <thead>
                         <tr className="cabecTabela">
-                            <th className="tabTitulProd">Codigo do curso</th>
-                            <th className="tabTituloVaor">Nome do Curso</th>
+                            <th className="tabTitulProd">Codigo do carrinho</th>
+                            <th className="tabTituloVaor">Nome do carrinho</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.lista.map(
-                            (curso) =>
+                            (carrinho) =>
 
-                                <tr key={curso.id}>
-                                    <td>{curso.codCurso}</td>
-                                    <td>{curso.nomeCurso}</td>
-                                    <td>{curso.periodo}</td>
+                                <tr key={carrinho.id}>
+                                    <td>{carrinho.id_carrinho}</td>
+                                    <td>{carrinho.qtd}</td>
                                     <td>
-                                        <button onClick={() => this.carregar(curso)} >
+                                        <button onClick={() => this.carregar(carrinho)} >
                                             Altera
                                         </button>
                                     </td>
                                     <td>
-                                        <button onClick={() => this.remover(curso)} >
+                                        <button onClick={() => this.remover(carrinho)} >
                                             Remove
                                         </button>
                                     </td>

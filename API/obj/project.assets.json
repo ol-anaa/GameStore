@@ -2879,19 +2879,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adria\\.nuget\\packages\\": {}
+    "C:\\Users\\olive\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
+      "projectUniqueName": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
       "projectName": "ProjetoEscola_API",
-      "projectPath": "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
-      "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adria\\Documents\\GitHub\\GameStore\\API\\obj\\",
+      "projectPath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\ProjetoEscola_API.csproj",
+      "packagesPath": "C:\\Users\\olive\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\olive\\OneDrive\\Documentos\\GitHub\\GameStore\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
