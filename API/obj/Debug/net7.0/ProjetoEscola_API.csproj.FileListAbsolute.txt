@@ -14,24 +14,18 @@ C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\ProjetoEscola_API
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\ProjetoEscola_API.runtimeconfig.json
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\ProjetoEscola_API.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\ProjetoEscola_API.pdb
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Azure.Core.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Azure.Identity.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.Identity.Client.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.OpenApi.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -39,7 +33,6 @@ C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Swashbuckle.AspNe
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.Memory.Data.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.Runtime.Caching.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\System.Security.Permissions.dll
@@ -70,3 +63,4 @@ C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net7.0\refint\ProjetoEsc
 C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net7.0\ProjetoEscola_API.pdb
 C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net7.0\ProjetoEscola_API.genruntimeconfig.cache
 C:\Users\adria\Documents\GitHub\GameStore\API\obj\Debug\net7.0\ref\ProjetoEscola_API.dll
+C:\Users\adria\Documents\GitHub\GameStore\API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -63,12 +63,8 @@ new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         User.Identity.Name);
 
         [HttpGet]
-        [Route("produto")]
+        [Route("cliente")]
         [Authorize(Roles = "cliente,adm")]
-
-        [HttpGet]
-        [Route("alterProd")]
-        [Authorize(Roles = "adm")]
 
         public string Cliente() => "Cliente";
         [HttpGet]
@@ -86,9 +82,7 @@ new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             issuer: _configuration["JWT:ValidIssuer"],
             audience: _configuration["JWT:ValidAudience"],
             claims: authClaims,
-            signingCredentials: new SigningCredentials(authSigningKey,
-
-            SecurityAlgorithms.HmacSha256)
+            signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
 
             );
             return token;
