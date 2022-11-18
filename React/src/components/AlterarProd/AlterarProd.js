@@ -7,9 +7,9 @@ import Main from '../template/Main';
 const title = "Alteração de produtos";
 
 
-const urlAPI = "http://localhost:5255/api/alterProd";
+const urlAPI = "http://localhost:5255/api/produto";
 const initialState = {
-    produto: { id: 0, valor: 0, nome: '', descicao: '' },
+    produto: { id: 0, valor: 0, nome: '', descricao: '' },
     lista: [],
 }
 
@@ -52,7 +52,6 @@ export default class AlterarProd extends Component {
        // let codigoCurso = document.getElementById('codigoCurso').value;
       
         const produto = this.state.produto;
-        produto.nome = String(nome);
         const metodo = produto.id ? 'put' : 'post';
         const url = produto.id ? `${urlAPI}/${produto.id}` : urlAPI;
         axios[metodo](url, produto)
@@ -67,6 +66,12 @@ export default class AlterarProd extends Component {
         const lista = this.state.lista.filter(a => a.id !== produto.id);
         if (add) lista.unshift(produto);
         return lista;
+    }
+
+    atualizaCampo(event) {
+        const produto = { ...this.state.produto };
+        produto[event.target.name] = event.target.value;
+        this.setState({ produto });
     }
 
     carregar(produto) {
@@ -120,7 +125,7 @@ export default class AlterarProd extends Component {
                     className="form-input"
                     name="valor"
 
-                    value={this.state.produto.descicao}
+                    value={this.state.produto.descricao}
 
                     onChange={e => this.atualizaCampo(e)}
                 />
@@ -157,7 +162,7 @@ export default class AlterarProd extends Component {
                                 <tr key={produto.id}>
                                     <td>{produto.nome}</td>
                                     <td>{produto.valor}</td>
-                                    <td>{produto.descicao}</td>
+                                    <td>{produto.descricao}</td>
                                     <td>
                                         <button onClick={() => this.carregar(produto)} >
                                             Altera

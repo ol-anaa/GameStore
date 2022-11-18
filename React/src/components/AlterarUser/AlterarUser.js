@@ -5,10 +5,10 @@ import Main from '../template/Main';
 
 const title = "Alteração Usuários";
 
-const urlAPI = "http://localhost:5255/api/aluno";
+const urlAPI = "http://localhost:5255/api/Usuario";
 
 const initialState = {
-    usuario: { id_usuario: 0, nome: '', email: '', senha: 0 },
+    usuario: { id: 0, nome: '', email: '', senha: 0 , role: ''},
     lista: [],
 }
 
@@ -30,7 +30,6 @@ export default class AlterarUser extends Component {
     salvar() {
         
         const usuario = this.state.usuario;
-        usuario.nome = String(nome);
         const metodo = usuario.id ? 'put' : 'post';
         const url = usuario.id ? `${urlAPI}/${usuario.id}` : urlAPI;
         axios[metodo](url, usuario)
@@ -40,11 +39,16 @@ export default class AlterarUser extends Component {
             })
     }
 
-    
     getListaAtualizada(usuario, add = true) {
         const lista = this.state.lista.filter(a => a.id !== usuario.id);
         if (add) lista.unshift(usuario);
         return lista;
+    }
+
+    atualizaCampo(event) {
+        const usuario = { ...this.state.usuario };
+        usuario[event.target.name] = event.target.value;
+        this.setState({ usuario });
     }
 
     carregar(usuario) {

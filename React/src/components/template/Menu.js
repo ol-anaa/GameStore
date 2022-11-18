@@ -26,7 +26,6 @@ export default function Menu(props) {
                     <div className='menu'>
                         <Nav>
                             <Nav.Link href="/produtos" >Produtos</Nav.Link>
-                            <Nav.Link href="/cadastro">Cadastre-se</Nav.Link>
                             <NavDropdown title="Usuário" id="basic-nav-dropdown">
                             {currentUser ? (
                                 <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
